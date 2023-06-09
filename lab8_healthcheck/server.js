@@ -8,6 +8,7 @@ server.get('/', (_, res) => res.send('<h1>Hello World! I am ' + APP_NAME + ' </h
 let isDatabaseReady = true
 server.get('/database/bomb', () => {
   isDatabaseReady = false
+  return res.send('The bomb has been placed. Wait around 10 seconds to explode')
 })
 
 // Check all dependency
