@@ -8,8 +8,7 @@ spec:
     - name: myapp
       image: crccheck/hello-world
       ports:
-        - name: api8000
-          containerPort: 8000
+        - containerPort: 8000
       resources:
         requests:
           memory: 1Mi

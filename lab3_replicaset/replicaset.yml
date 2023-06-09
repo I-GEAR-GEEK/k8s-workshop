@@ -4,8 +4,8 @@ metadata:
   name: myapp-rs
   namespace: kube-workshop
 spec:
-  replicas: 1
-  # replicas: 2
+  # replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       name: myapp
@@ -19,8 +19,7 @@ spec:
           image: crccheck/hello-world
           # image: hello-world
           ports:
-            - name: api8000
-              containerPort: 8000
+            - containerPort: 8000
           resources:
             requests:
               memory: 1Mi

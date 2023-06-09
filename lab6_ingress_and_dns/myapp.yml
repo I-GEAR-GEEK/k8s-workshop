@@ -15,9 +15,8 @@ spec:
         name: myapp
     spec:
       containers:
-        - name: myapp
+        - name: myapp-container
           image: crccheck/hello-world
-          # image: hello-world
           ports:
             - containerPort: 8000
           resources:

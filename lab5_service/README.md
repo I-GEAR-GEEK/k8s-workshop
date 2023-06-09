@@ -29,3 +29,13 @@ kubectl exec -n kube-workshop -it hisapp -- /bin/bash
 ```sh
 http://myapp-service:8000
 ```
+
+6. Repeat step 5 and try to check pod logs if there has a request
+
+```log
+[::ffff:10.244.0.141]:33126: response:200
+[::ffff:10.244.0.141]:33126: response:200
+[::ffff:10.244.0.141]:33126: response:200
+[::ffff:10.244.0.141]:33126: response:200
+[::ffff:10.244.0.141]:33126: response:200
+```
