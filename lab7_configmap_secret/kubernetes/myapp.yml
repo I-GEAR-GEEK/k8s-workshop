@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: myapp-container
-          image: 167663088283.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:banyawat
+          image: ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:YOURNAME
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
