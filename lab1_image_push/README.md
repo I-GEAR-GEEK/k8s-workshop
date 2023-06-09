@@ -17,11 +17,11 @@ aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS
 3. Tag docker
 
 ```sh
-docker tag myapp:YOUR_NAME ap-southeast-1.dkr.ecr.REGION.amazonaws.com/kube-workshop-app:YOUR_NAME
+docker tag myapp:YOUR_NAME ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:YOUR_NAME
 ```
 
 4. Push image
 
 ```sh
-docker push 167663088283.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:banyawat
+docker push ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:YOUR_NAME
 ```
