@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mytool-job
+spec:
+  template:
+    metadata:
+      name: mytool-job-pod
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: mytool-job
+          image: arunvelsriram/utils
+          command: ["curl", "http://myapp-service:8000"]
+  backoffLimit: 4
