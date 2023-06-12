@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: workshop-editor-role-binding
+subjects:
+  - kind: ServiceAccount
+    name: igg-john-doe
+    namespace: default
+  # - kind: ServiceAccount
+  #   name: sarah-erlando-admin2
+  #   namespace: default
+roleRef:
+  kind: ClusterRole
+  name: kube-workshop-editor
+  apiGroup: rbac.authorization.k8s.io

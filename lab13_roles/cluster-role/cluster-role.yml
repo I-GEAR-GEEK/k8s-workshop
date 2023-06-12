@@ -1,0 +1,40 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: kube-workshop-editor
+  labels:
+    kubernetes.io/bootstrapping: rbac-defaults
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+rules:
+  - verbs: ["get", "list", "watch"]
+    apiGroups: [""]
+    resources: ["pods"]
+
+  - verbs: ["get", "list", "watch"]
+    apiGroups: [""]
+    resources: ["nodes/metrics", "pods/metrics", "services", "endpoints"]
+
+  - apiGroups: [""]
+    resources: ["pods/portforward"]
+    verbs: ["get", "list", "create"]
+
+  - verbs: ["get", "list", "watch"]
+    apiGroups: [""]
+    resources: ["configmaps"]
+
+  - verbs: ["get", "list", "watch"]
+    apiGroups: ["batch"]
+    resources: ["cronjobs", "cronjobs/status", "jobs", "jobs/status"]
+
+  - verbs: ["get", "list", "watch"]
+    apiGroups: [""]
+    resources: ["namespaces"]
+
+  - verbs: ["get", "list", "watch"]
+    apiGroups: [""]
+    resources: ["services", "services/status"]
+
+  - verbs: ["get", "list", "watch"]
+    apiGroups: ["apps"]
+    resources: ["deployments"]

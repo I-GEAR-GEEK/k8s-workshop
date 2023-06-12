@@ -1,0 +1,27 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: role-editor
+  namespace: kube-workshop
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "pods/log"]
+    verbs: ["get", "watch", "list", "delete"]
+  - apiGroups: [""]
+    resources: ["jobs", "cronjobs"]
+    verbs: ["get", "list", "watch", "patch", "update", "create"]
+  - apiGroups: [""]
+    resources: ["pods/exec"]
+    verbs: ["create", "get"]
+  - verbs: ["get", "list", "watch", "patch", "update", "create"]
+    apiGroups: [""]
+    resources: ["configmaps"]
+  - verbs: ["get", "list", "watch", "patch", "update", "create"]
+    apiGroups: ["apps"]
+    resources: ["deployments"]
+  - verbs: ["get", "list", "watch", "create", "update", "patch"]
+    apiGroups: [""]
+    resources: ["services", "services/status"]
+  - verbs: ["get", "list", "watch", "create", "update", "patch"]
+    apiGroups: ["networking.k8s.io"]
+    resources: ["ingresses"]
