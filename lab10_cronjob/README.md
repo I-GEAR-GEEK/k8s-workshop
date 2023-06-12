@@ -1,4 +1,4 @@
-# Execute kubernetes job
+# Make kubernetes cron job
 
 1. Build docker image
 
