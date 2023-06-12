@@ -26,21 +26,13 @@
 kubectl apply -f kubernetes/myapp.yml
 ```
 
-3. Try to execute job within the container.
+3. Try to run migration script with seprate container with this command
 
 ```sh
-yarn migrate-db
+kubectl apply -f kubernetes/cronjob.yml
 ```
 
-3. This time both of CPU / Memory usage are rising up.
-
-4. Try to run migration script with seprate container with this command
-
-```sh
-kubectl apply -f kubernetes/job.yml
-```
-
-5. Look at pods
+4. Look at pods
 
 ```sh
 kubectl get pods -n kube-workshop

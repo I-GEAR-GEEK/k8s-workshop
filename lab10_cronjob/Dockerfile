@@ -4,7 +4,7 @@ WORKDIR /usr
 
 COPY package.json .
 COPY server.js .
-COPY migrate.js .
+COPY export-report.js .
 
 RUN yarn install
 

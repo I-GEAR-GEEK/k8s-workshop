@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: myapp-cronjob
+  namespace: kube-workshop
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: myapp-job-container
+              image: 167663088283.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:banyawat
+              imagePullPolicy: Always
+              command: ["yarn", "export-report"]
+          restartPolicy: OnFailure
+          imagePullSecrets:
+            - name: bitbucket-secret

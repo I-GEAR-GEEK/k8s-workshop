@@ -4,9 +4,9 @@
 
     a. Build docker images
 
-      ```sh
-      docker build -t ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:YOUR_NAME .
-      ```
+    ```sh
+    docker build -t ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:YOUR_NAME .
+    ```
 
     b. Get AWS ECR Accesstoken
 
