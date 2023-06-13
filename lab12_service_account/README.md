@@ -3,13 +3,13 @@
 1. Create service account
 
 ```sh
-kubectl apply -f service-account/john-doe/account.yml
+kubectl apply -f john-doe/account.yml
 ```
 
 2. Create token as a secret for service account
 
 ```sh
-kubectl apply -f service-account/john-doe/secret.yml
+kubectl apply -f john-doe/secret.yml
 ```
 
 3. Check `Service Account` section in Lens
