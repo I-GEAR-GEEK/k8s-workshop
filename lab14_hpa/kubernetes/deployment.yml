@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  namespace: kube-workshop
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      name: myapp
+  template:
+    metadata:
+      labels:
+        name: myapp
+    spec:
+      containers:
+        - name: myapp-container
+          image: 167663088283.dkr.ecr.ap-southeast-1.amazonaws.com/kube-workshop-app:banyawat
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 15m
+            limits:
+              memory: 150Mi
+              cpu: 50m
+      imagePullSecrets:
+        - name: bitbucket-secret
