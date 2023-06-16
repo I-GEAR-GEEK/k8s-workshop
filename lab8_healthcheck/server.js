@@ -6,7 +6,7 @@ const APP_NAME = process.env.APP_NAME || 'Groot'
 server.get('/', (_, res) => res.send('<h1>Hello World! I am ' + APP_NAME + ' </h1>'))
 
 let isDatabaseReady = true
-server.get('/database/bomb', () => {
+server.get('/database/bomb', (_, res) => {
   isDatabaseReady = false
   return res.send('The bomb has been placed. Wait around 10 seconds to explode')
 })
